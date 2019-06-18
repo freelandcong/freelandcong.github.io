@@ -2,9 +2,15 @@
 <html>
 	<head>
 		<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
-		<link rel="shortcut icon" type="image/png" href="http://freelangcong.github.io/favicon.ico"/>
 	</head>
 	<body>
+		<script>
+			let auth = prompt("Please type your authentication password. If you don't have one, ask Joe Baptista, Walter Jenkins, or Jaden Baptista to get the territory for you.").tostring();
+			if (typeof sessionStorage.redirect != "undefined"){
+				let route = sessionStorage.redirect.split("github.io/")[1];
+				location.replace("https://raw.githubusercontent.com/freelandcong/territories/master/"+route+"?token="+auth);
+			}
+		</script>
 		<h2>Hi there!</h2>
 		<h3>Welcome to the Freeland congregation's website.</h3>
 		<br>
@@ -54,5 +60,8 @@
 			<li><a href="https://raw.githubusercontent.com/freelandcong/territories/master/territories/po7.pdf">P.O. Box Territory 7</a></li>
 			<li><a href="https://raw.githubusercontent.com/freelandcong/territories/master/territories/po8.pdf">P.O. Box Territory 8</a></li>
 		</ul>
+		<script>
+			[...document.querySelectorAll("a")].forEach(a=>{a.href=a.href+"?token="+auth});
+		</script>
 	</body>
 </html>
