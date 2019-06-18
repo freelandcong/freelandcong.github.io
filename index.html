@@ -6,11 +6,14 @@
 	</head>
 	<body>
 		<script>
-			let auth = prompt("Please type your authentication password. If you don't have one, ask Joe Baptista, Walter Jenkins, or Jaden Baptista to get the territory for you.").toString();
+			let auth = prompt("Please type your authentication password. If you don't have one, ask Joe Baptista, Walter Jenkins, or Jaden Baptista to get the territory for you. P.S. The Kingdom has been brought to birth; His rulership will fill the earth.").toString();
+			if (CryptoJS.SHA1(auth)!="b86667cd55d95cbb6d1ea1cf8528ce9f85e2d53d"){
+				document.open();
+				location.replace("https://www.jw.org");
+			}
 			if (typeof sessionStorage.redirect != "undefined"){
 				let route = sessionStorage.redirect.split("github.io/")[1];
 				
-				location.replace("https://raw.githubusercontent.com/freelandcong/territories/master/"+route+"?token="+auth);
 			}
 		</script>
 		<h2>Hi there!</h2>
