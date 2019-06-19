@@ -13,7 +13,12 @@
 			}
 			if (typeof sessionStorage.redirect != "undefined"){
 				let route = sessionStorage.redirect.split("github.io/")[1];
-				
+				if (route.includes("territories")){
+					let link = "https://res.cloudinary.com/dr05ns1zh/image/upload/v1560893712/"+route.split("/")[1];
+					let a = createElement("A");
+					a.href = link;
+					a.click();
+				}
 			}
 		</script>
 		<h2>Hi there!</h2>
