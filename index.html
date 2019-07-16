@@ -10,15 +10,6 @@
 			if (CryptoJS.SHA1(auth)!="b86667cd55d95cbb6d1ea1cf8528ce9f85e2d53d"){
 				document.open();
 				location.replace("https://www.jw.org");
-			} else if (typeof sessionStorage.redirect != "undefined"){
-				console.log(sessionStorage.redirect);
-				let route = sessionStorage.redirect.split("github.io/territories/")[1];
-				console.log(route);
-				let query = 'a[href*="'+route+'"]';
-				console.log(query);
-				let el = document.querySelector(query);
-				console.log(el);
-				el.click(); //finds link with "10map" or "24contacts" in the href and clicks it. Also matches territories/1560893712 (matches 6 contacts)
 			}
 		</script>
 		<h2>Hi there!</h2>
@@ -79,4 +70,13 @@
 			<li><a download="P.O. Box Territory 8.pdf" href="https://res.cloudinary.com/dr05ns1zh/image/upload/v1560893712/po8.pdf">P.O. Box Territory 8</a></li>
 		</ul>
 	</body>
+	<script>
+		if (typeof sessionStorage.redirect != "undefined"){
+			console.log(sessionStorage.redirect);
+			let route = sessionStorage.redirect.split("github.io/territories/")[1];
+			let query = 'a[href*="'+route+'"]';
+			let el = document.querySelector(query);
+			el.click(); //finds link with "10map" or "24contacts" in the href and clicks it. Also matches territories/1560893712 (matches 6 contacts)
+		}
+	</script>
 </html>
