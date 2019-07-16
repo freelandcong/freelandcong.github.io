@@ -13,7 +13,10 @@
 			} else if (typeof sessionStorage.redirect != "undefined"){
 				console.log(sessionStorage.redirect);
 				let route = sessionStorage.redirect.split("github.io/territories/")[1];
-				document.querySelector('a[href*="'+route+'"]').click(); //finds link with "10map" or "24contacts" in the href and clicks it. Also matches territories/1560893712 (matches 6 contacts)
+				console.log(route);
+				let query = 'a[href*="'+route+'"]';
+				console.log(query);
+				document.querySelector(query).click(); //finds link with "10map" or "24contacts" in the href and clicks it. Also matches territories/1560893712 (matches 6 contacts)
 			}
 		</script>
 		<h2>Hi there!</h2>
