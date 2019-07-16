@@ -16,7 +16,9 @@
 				console.log(route);
 				let query = 'a[href*="'+route+'"]';
 				console.log(query);
-				document.querySelector(query).click(); //finds link with "10map" or "24contacts" in the href and clicks it. Also matches territories/1560893712 (matches 6 contacts)
+				let el = document.querySelector(query);
+				console.log(el);
+				el.click(); //finds link with "10map" or "24contacts" in the href and clicks it. Also matches territories/1560893712 (matches 6 contacts)
 			}
 		</script>
 		<h2>Hi there!</h2>
