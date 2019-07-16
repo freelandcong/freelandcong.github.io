@@ -10,12 +10,10 @@
 			if (CryptoJS.SHA1(auth)!="b86667cd55d95cbb6d1ea1cf8528ce9f85e2d53d"){
 				document.open();
 				location.replace("https://www.jw.org");
-			}
-			if (typeof sessionStorage.redirect != "undefined"){
-				let route = sessionStorage.redirect.split("github.io/")[1];
-				if (route.includes("territories")){
-					document.querySelector('a[href*="'+route.split("/")[1]+'"]').click(); //finds link with "10map" or "24contacts" in the href and clicks it. Also matches territories/1560893712 (matches 6 contacts)
-				}
+			} else if (typeof sessionStorage.redirect != "undefined"){
+				console.log(sessionStorage.redirect);
+				let route = sessionStorage.redirect.split("github.io/territories/")[1];
+				document.querySelector('a[href*="'+route+'"]').click(); //finds link with "10map" or "24contacts" in the href and clicks it. Also matches territories/1560893712 (matches 6 contacts)
 			}
 		</script>
 		<h2>Hi there!</h2>
