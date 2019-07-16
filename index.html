@@ -14,8 +14,7 @@
 			if (typeof sessionStorage.redirect != "undefined"){
 				let route = sessionStorage.redirect.split("github.io/")[1];
 				if (route.includes("territories")){
-					let link = "https://res.cloudinary.com/dr05ns1zh/image/upload/v1560893712/"+route.split("/")[1];
-					document.location.href = link;
+					document.querySelector('a[href*="'+route.split("/")[1]+'"]').click(); //finds link with "10map" or "24contacts" in the href and clicks it. Also matches territories/1560893712 (matches 6 contacts)
 				}
 			}
 		</script>
